@@ -1,0 +1,31 @@
+CROIRE EN SOI by David Nakamura — Site statique (version Luxe)
+==============================================================
+
+DÉPLOIEMENT
+Uploader tout le contenu de ce dossier à la racine de l'hébergement
+(croireensoi.fr). Aucune dépendance, aucun build : HTML/CSS/JS vanilla.
+
+À PERSONNALISER (chercher "MODIFIER" dans les fichiers)
+1. Images : remplacer les blocs .ph par de vraies <img loading="lazy">.
+   Chemins prévus : assets/img/ (listés en commentaire dans chaque page),
+   + images Open Graph og-*.jpg (1200x630).
+2. Formulaire : assets/js/main.js → constante ENDPOINT (Formspree/Web3Forms).
+   Repli actuel : ouverture du client mail vers contact@croireensoi.fr.
+3. Tarifs : services.html (tableau unique).
+4. Bulgarie : voyages.html — bloc commenté, supprimable en un geste.
+5. Réseaux, e-mail et WhatsApp : quatre constantes en tête de
+   assets/js/main.js, elles suffisent pour les 12 pages :
+     SOCIAL_INSTAGRAM = ""   URL complète du profil Instagram
+     SOCIAL_FACEBOOK  = ""   URL complète de la page Facebook
+     WHATSAPP_NUMBER  = ""   format international sans + ni espace,
+                             ex. 33612345678 → https://wa.me/33612345678
+     EMAIL = "contact@croireensoi.fr"   utilisée en mailto:
+   Tant qu'une constante est vide, son icône renvoie vers contact.html.
+   Ne jamais écrire d'adresse dans le HTML, ni de lien "#".
+6. Téléphone : bloc commenté dans contact.html. Le bouton WhatsApp du pied
+   de page, visible sous 56 rem, dépend de WHATSAPP_NUMBER (point 5).
+
+ANIMATION D'OUVERTURE
+Jouée une fois par session (sessionStorage "ces-intro"),
+désactivée si prefers-reduced-motion. Pour la revoir : navigation privée
+ou sessionStorage.removeItem("ces-intro") dans la console.
